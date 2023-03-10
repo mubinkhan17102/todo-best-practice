@@ -1,0 +1,11 @@
+.ItemStyle{
+    background-color: bisque;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    justify-content: space-between;
+    
+    .ItemContent{
+        font-weight: bold;
+    }
+}
