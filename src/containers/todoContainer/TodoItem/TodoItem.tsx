@@ -3,14 +3,17 @@ import classes from './TodoItem.module.scss';
 import Button from '../../../components/button/Button';
 import Checkbox from '../../../components/checkbox/Checkbox';
 
-const TodoItem = () => {
-  const testElement = React.createElement('div', null, []);
-  console.log(testElement);
+type TodoItemProps = {
+  title?: string
+}
+
+const TodoItem = ({title}: TodoItemProps) => {
+
   return (
     <div className={`${classes.ItemStyle} flex`}>
         <div className={`${classes.ItemContent} ${classes.LeftContent}`}>
             <Checkbox/>
-            Task to do.
+            {title}
         </div>
         <div className={`${classes.Buttons}`}>
             <Button>
