@@ -4,8 +4,20 @@
     margin: 20px;
     border-radius: 5px;
     justify-content: space-between;
-    
+    align-items: center;
     .ItemContent{
         font-weight: bold;
+    }
+
+    .LeftContent{
+        display: flex;
+        width: 110px;
+        justify-content: space-between;
+    }
+
+    .Buttons{
+        display: flex;
+        width: 200px;
+        justify-content: space-between;
     }
 }
