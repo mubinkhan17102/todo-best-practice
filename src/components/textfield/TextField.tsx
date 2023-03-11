@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import classes from './TextField.module.scss'
 
 type IProps = {
@@ -7,8 +7,13 @@ type IProps = {
 }
 
 const TextField = ({handleTask, task}:IProps) => {
+  const inputFieldRef = useRef<HTMLInputElement>(null);
+
+  useEffect(()=>{
+    inputFieldRef.current?.focus();
+  }, [])
   return (
-    <input type="text" className={`${classes.TextField}`} onChange={(e)=>handleTask(e.target.value)} value={task}/>
+    <input type="text" ref={inputFieldRef} className={`${classes.TextField}`} onChange={(e)=>handleTask(e.target.value)} value={task}/>
   )
 }
 

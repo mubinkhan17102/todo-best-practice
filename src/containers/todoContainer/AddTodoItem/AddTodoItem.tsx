@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEventHandler, useState } from 'react';
 import Button from '../../../components/button/Button';
 import TextField from '../../../components/textfield/TextField';
 
@@ -13,7 +13,8 @@ const AddTodoItem = ({addTodo}:AddTodoItemType) => {
     setTask(value)
   }
 
-  const handleAdTodo = ()=>{
+  const handleAdTodo:FormEventHandler<HTMLFormElement> = (event)=>{
+    event.preventDefault();
     addTodo(task);
     setTask('');
   }
@@ -21,9 +22,9 @@ const AddTodoItem = ({addTodo}:AddTodoItemType) => {
   return (
     <>
       {task}
-      <form>
+      <form onSubmit={handleAdTodo}>
         <TextField handleTask = {handleTask} task = {task}/>
-        <Button onClick={handleAdTodo}>
+        <Button type='submit'>
           Add
         </Button>
       </form>
