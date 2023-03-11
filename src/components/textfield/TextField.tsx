@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './TextField.module.scss'
 
 type IProps = {
-    handleTask?:any
+    handleTask: (value: string)=>void
     task?: string
 }
 

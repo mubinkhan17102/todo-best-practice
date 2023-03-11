@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react'
+import React, { MouseEventHandler, ReactNode } from 'react'
 import classes from './Button.module.scss';
 
 type IProps = {
     children?: ReactNode;
     type?: string
-    onClick?: any
+    onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
 const Button = ({children, type, onClick}:IProps) => {
