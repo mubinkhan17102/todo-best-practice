@@ -1,18 +1,20 @@
 import './TodoContainer.modules.scss'
 import TodoItem from './TodoItem/TodoItem';
-import Button from '../../components/button/Button';
-import TextField from '../../components/textfield/TextField';
+import AddTodoItem from './AddTodoItem/AddTodoItem';
+import { useState } from 'react';
 
 export const TodoContainer = () => {
-  const todos = ['Todo 1', 'Todo 2','Todo 3']
+  const [todos , setTodo] = useState<string[]>( ['Todo 1', 'Todo 2','Todo 3']);
+  
+  const addTodo = (task:string)=>{
+    setTodo((prevTodos)=>{
+      return [...prevTodos, task];
+    });
+  }
+
   return (
     <>
-      <form>
-        <TextField/>
-        <Button>
-          Add
-        </Button>
-      </form>
+      <AddTodoItem addTodo={addTodo}/>
       {
         todos.map(todo => <TodoItem title={todo} key={todo}/>)
       }

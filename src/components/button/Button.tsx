@@ -4,11 +4,12 @@ import classes from './Button.module.scss';
 type IProps = {
     children?: ReactNode;
     type?: string
+    onClick?: any
 }
 
-const Button = ({children, type}:IProps) => {
+const Button = ({children, type, onClick}:IProps) => {
   return (
-    <button className={`${classes.Button}`}>
+    <button type='button' className={`${classes.Button}`} onClick={onClick}>
         {children}
     </button>
   )

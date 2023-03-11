@@ -1,9 +1,14 @@
 import React from 'react';
 import classes from './TextField.module.scss'
 
-const TextField = () => {
+type IProps = {
+    handleTask?:any
+    task?: string
+}
+
+const TextField = ({handleTask, task}:IProps) => {
   return (
-    <input type="text" className={`${classes.TextField}`}/>
+    <input type="text" className={`${classes.TextField}`} onChange={(e)=>handleTask(e.target.value)} value={task}/>
   )
 }
 
